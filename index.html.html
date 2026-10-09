@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gita Ramadhani Yusrin | Portofolio</title>
+<meta name="description" content="Portofolio Gita Ramadhani Yusrin, mahasiswa Teknik Informatika Universitas Negeri Surabaya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F7; --surface:#FFFFFF; --ink:#14213D; --muted:#51607A;
+  --line:#CBD5E3; --accent:#2F55D4; --mark:#FFD84D; --on-accent:#FFFFFF;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#0E1424; --surface:#172038; --ink:#EAF0FB; --muted:#9AA9C4;
+  --line:#2A3656; --accent:#8CA6FF; --mark:#6B5A00; --on-accent:#0E1424;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:1.05rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:28px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+p{max-width:62ch}
+
+/* Navigasi */
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.15rem;text-decoration:none}
+.links{display:flex;align-items:center;gap:18px;font-size:.95rem}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:10px 20px;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;border:0;cursor:pointer;font:inherit;font-weight:700}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+#theme{width:40px;height:40px;padding:0;border-radius:50%;background:transparent;border:1.5px solid var(--line);color:var(--ink);cursor:pointer;font-size:1.1rem}
+
+/* Hero */
+.hero{border-top:0;padding:72px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(3rem,9vw,6.2rem);line-height:.98}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero .lead{margin:24px 0 32px;font-size:1.2rem;color:var(--muted)}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.photo{aspect-ratio:4/5;border-radius:12px;border:1px solid var(--line);background:var(--surface);overflow:hidden;display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo span{font-family:var(--serif);font-size:5rem;color:var(--muted)}
+mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+dl{display:grid;grid-template-columns:110px 1fr;gap:14px 16px;align-self:start}
+dt{color:var(--muted)} dd{font-weight:500}
+.about .desc p+p{margin-top:14px}
+
+/* What I Can Do */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px}
+.box h3{font-size:1.5rem;margin-bottom:14px}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.95rem}
+
+/* Achievement: urutan waktu */
+.timeline{list-style:none;border-left:2px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 36px 28px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.timeline time{color:var(--muted);font-size:.95rem}
+.timeline h3{font-size:1.5rem;margin:2px 0 4px}
+.timeline .org{font-weight:500;margin-bottom:8px}
+.timeline p{color:var(--muted)}
+.timeline a{display:inline-block;margin-top:10px;color:var(--accent);font-weight:700}
+.note{display:inline-block;margin-top:10px;color:var(--muted);font-style:italic}
+
+/* CV */
+.cv{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+.cv .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.cv-list{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 28px}
+.cv-list div{padding:18px 0;border-bottom:1px solid var(--line)}
+.cv-list div:last-child{border-bottom:0}
+.cv-list h3{font-size:1.2rem;margin-bottom:6px}
+.cv-list p{color:var(--muted);font-size:.98rem}
+.cv-list b{color:var(--ink);font-weight:500}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact h2{font-size:clamp(2.4rem,7vw,4.4rem)}
+.cards{display:grid;gap:12px}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;text-decoration:none}
+.card small{display:block;color:var(--muted)}
+.card b{font-weight:700;word-break:break-all}
+.card:hover{border-color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem;text-align:center}
+
+@media (max-width:760px){
+  .hero-grid,.about,.cols,.contact,.cv{grid-template-columns:1fr}
+  .photo{max-width:280px}
+  .links a.hide-sm{display:none}
+  dl{grid-template-columns:90px 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Navigasi utama">
+      <a class="brand" href="#top">Gita Ramadhani Yusrin</a>
+      <div class="links">
+        <a class="hide-sm" href="#about">About</a>
+        <a class="hide-sm" href="#skills">What I Can Do</a>
+        <a class="hide-sm" href="#achievement">Achievement</a>
+        <a class="hide-sm" href="#cv">CV</a>
+        <button id="theme" type="button" aria-label="Ganti mode terang atau gelap">◐</button>
+        <a class="btn" href="#contact">Hubungi saya</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Gita <em>Ramadhani</em> Yusrin</h1>
+        <p class="lead">Mahasiswa Teknik Informatika yang <mark>belajar menulis kode</mark> setelah terbiasa menulis sastra.</p>
+        <div class="cta">
+          <a class="btn" href="#achievement">Lihat pencapaian</a>
+          <a class="btn ghost" href="#contact">Kontak</a>
+        </div>
+      </div>
+      <!-- GANTI: simpan foto kamu di folder ini dengan nama foto.jpg -->
+      <div class="photo"><img src="foto.jpg" alt="Foto Gita Ramadhani Yusrin" onerror="this.remove()"><span aria-hidden="true">G</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About Me</h2>
+      <div class="about">
+        <dl>
+          <dt>Nama</dt><dd>Gita Ramadhani Yusrin</dd>
+          <dt>NIM</dt><dd>26051204036</dd>
+          <dt>Prodi</dt><dd>S1 Teknik Informatika</dd>
+          <dt>Pendidikan</dt><dd>Universitas Negeri Surabaya (2026 - sekarang)</dd>
+          <dt>Sebelumnya</dt><dd>MAN 2 Blitar</dd>
+          <dt>Aktivitas</dt><dd>Mahasiswa aktif, mendalami dasar pemrograman, struktur data, dan pemanfaatan AI untuk belajar.</dd>
+        </dl>
+        <div class="desc">
+          <p>Halo! Saya mahasiswa baru Teknik Informatika yang senang memecahkan masalah lewat kode dan teknologi. Saya tertarik pada pemrograman, pengembangan web, dan penerapan AI untuk membuat solusi digital yang bermanfaat.</p>
+          <p>Sejak SMA saya aktif di organisasi jurnalistik, bidang sastra. Latar belakang ini melatih saya menulis, menyampaikan ide, dan bekerja sama dalam tim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I CAN DO -->
+  <section id="skills">
+    <div class="wrap">
+      <h2>What I Can Do</h2>
+      <div class="cols">
+        <div class="box">
+          <h3>Skill</h3>
+          <ul class="tags">
+            <li>Dasar pemrograman (C++)</li>
+            <li>Problem solving</li>
+            <li>Algoritma dasar</li>
+            <li>Prompt AI untuk belajar coding</li>
+            <li>Penulisan kreatif dan sastra</li>
+            <li>Kerja sama tim</li>
+            <li>Komunikasi</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Tools</h3>
+          <ul class="tags">
+            <li>Visual Studio Code</li>
+            <li>Git dan GitHub</li>
+            <li>ChatGPT</li>
+            <li>Claude</li>
+            <li>Google Gemini</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT -->
+  <section id="achievement">
+    <div class="wrap">
+      <h2>Achievement</h2>
+      <ol class="timeline" reversed>
+        <li>
+          <time datetime="2026-09-30">2026</time>
+          <h3>Siswa Tersertifikasi Gemini (Universitas)</h3>
+          <p class="org">Google for Education</p>
+          <p>Menunjukkan pengetahuan, keterampilan, dan kompetensi dasar untuk menggunakan AI Google di lingkungan pendidikan. Berlaku 30/09/2026 sampai 30/09/2029.</p>
+          <a href="sertifikat_gemini.pdf" target="_blank" rel="noopener">Lihat sertifikat (PDF)</a>
+        </li>
+        <li>
+          <time datetime="2026">2026</time>
+          <h3>Mahasiswa Baru Teknik Informatika</h3>
+          <p class="org">Universitas Negeri Surabaya</p>
+          <p>Diterima dan terdaftar sebagai mahasiswa S1 Teknik Informatika melalui seleksi masuk universitas.</p>
+        </li>
+        <li>
+          <time>2024 - 2025</time>
+          <h3>Anggota Jurnalistik, Bidang Sastra</h3>
+          <p class="org">Jurnalistik MAN 2 Blitar</p>
+          <p>Aktif di divisi sastra organisasi jurnalistik sekolah: menulis dan berkarya sastra, yang melatih kemampuan menulis, komunikasi, dan kerja tim.</p>
+          <span class="note">Dokumentasi belum tersedia.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="wrap cv">
+      <div>
+        <h2>Curriculum Vitae</h2>
+        <p>Ringkasan pendidikan, pengalaman, dan sertifikasi saya. Versi lengkap bisa dibuka atau diunduh dalam bentuk PDF.</p>
+        <div class="actions">
+          <a class="btn" href="cv.pdf" target="_blank" rel="noopener">Buka CV</a>
+          <a class="btn ghost" href="cv.pdf" download>Unduh PDF</a>
+        </div>
+      </div>
+      <div class="cv-list">
+        <div><h3>Pendidikan</h3><p><b>Universitas Negeri Surabaya</b>, S1 Teknik Informatika (2026 - sekarang)<br>MAN 2 Blitar</p></div>
+        <div><h3>Pengalaman Organisasi</h3><p><b>Anggota Jurnalistik, Bidang Sastra</b>, MAN 2 Blitar (2024 - 2025)</p></div>
+        <div><h3>Sertifikasi</h3><p><b>Siswa Tersertifikasi Gemini (Universitas)</b>, Google for Education, berlaku sampai 30/09/2029</p></div>
+        <div><h3>Keterampilan</h3><p>Dasar pemrograman (C++), problem solving, algoritma dasar, prompt AI, penulisan kreatif, kerja sama tim, komunikasi</p></div>
+        <div><h3>Tools</h3><p>Visual Studio Code, Git dan GitHub, ChatGPT, Claude, Google Gemini</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Mari berkenalan</h2>
+        <p>Saya selalu terbuka untuk berdiskusi, berkolaborasi dalam proyek pemrograman, atau sekadar berbagi ilmu seputar dunia Informatika. Jangan ragu menghubungi saya lewat kontak di samping.</p>
+        <p style="margin-top:20px"><!-- GANTI: simpan CV kamu dengan nama cv.pdf --><a class="btn ghost" href="cv.pdf" download>Unduh CV</a></p>
+      </div>
+      <div class="cards">
+        
+        <a class="card" href="mailto:gitaramadhaniyy@gmail.com"><small>Email</small><b>gitaramadhaniyy@gmail.com</b></a>
+        <a class="card" href="https://github.com/gitaramadhanii" target="_blank" rel="noopener"><small>GitHub</small><b>github.com/gitaramadhanii</b></a>
+        <a class="card" href="https://www.linkedin.com/in/gita-ramadhani-yusrin-355a04440" target="_blank" rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/gita-ramadhani-yusrin</b></a>
+        <a class="btn" href="mailto:gitaramadhaniyy@gmail.com" style="text-align:center">Kirim pesan</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Gita Ramadhani Yusrin. Seluruh hak cipta dilindungi.</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, key="theme";
+  var saved=null; try{saved=localStorage.getItem(key)}catch(e){}
+  var dark=saved?saved==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;
+  root.setAttribute("data-theme",dark?"dark":"light");
+  document.getElementById("theme").addEventListener("click",function(){
+    var next=root.getAttribute("data-theme")==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem(key,next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
